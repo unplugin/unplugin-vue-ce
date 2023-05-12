@@ -1,0 +1,122 @@
+{
+  "name": "unplugin-vue-ce",
+  "description": "",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "homepage": "",
+  "repository": "",
+  "bugs": "",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "import": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "README.md"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*",
+        "./index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "init": "pnpm i",
+    "lint:fix": "eslint --fix ./ --ext .vue,.js,.ts,.jsx,.tsx,.json ",
+    "dev": "pnpm run --filter @unplugin-vue-ce/build dev",
+    "dev:v-model": "pnpm run --filter @unplugin-vue-ce/play-v-model dev",
+    "build": "pnpm run --filter @unplugin-vue-ce/build build",
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag",
+    "publish:npm": "pnpm publish --no-git-checks --access public",
+    "publish:script": "pnpm run --filter @unplugin-vue-ce/build publish:npm",
+    "clean": "rimraf dist",
+    "prepare": "npx simple-git-hooks",
+    "test": "vitest",
+    "test:update": "vitest -u",
+    "test:coverage": "vitest --coverage"
+  },
+  "peerDependencies": {
+    "baiwusanyu-utils": "^1.0.8",
+    "chalk": "^4.1.2",
+    "estree-walker-ts": "^1.0.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1",
+    "magic-string": "^0.30.0",
+    "unplugin": "^1.3.1",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "@unplugin-vue-ce/utils": "workspace:*",
+    "@unplugin-vue-ce/v-model": "workspace:*",
+    "baiwusanyu-utils": "^1.0.12",
+    "chalk": "^4.1.2",
+    "estree-walker-ts": "^1.0.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1",
+    "magic-string": "^0.30.0",
+    "unplugin": "^1.3.1",
+    "vue": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.21.8",
+    "@babel/types": "^7.21.5",
+    "@baiwusanyu/eslint-config": "^1.0.12",
+    "@rollup/pluginutils": "^5.0.2",
+    "@types/css-tree": "^2.3.1",
+    "@types/estree": "^1.0.1",
+    "@types/fs-extra": "^11.0.1",
+    "@types/gulp": "^4.0.10",
+    "@types/node": "^20.1.3",
+    "@vitejs/plugin-vue": "^4.2.2",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vitest/coverage-c8": "^0.31.0",
+    "@vitest/ui": "^0.31.0",
+    "@vue/compiler-sfc": "^3.3.1",
+    "bumpp": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.40.0",
+    "esno": "^0.16.3",
+    "git-ensure": "^0.1.0",
+    "gulp": "^4.0.2",
+    "jsdom": "^22.0.0",
+    "lint-staged": "^13.2.2",
+    "magic-string-ast": "^0.1.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "rollup": "^3.21.6",
+    "simple-git-hooks": "^2.8.1",
+    "sucrase": "^3.32.0",
+    "tsup": "^6.7.0",
+    "typescript": "5.0.4",
+    "vite": "^4.3.5",
+    "vitest": "^0.31.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "node vertify-commit.js"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": [
+      "eslint ./ --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@baiwusanyu"
+    ]
+  }
+}

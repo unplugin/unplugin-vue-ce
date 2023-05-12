@@ -1,0 +1,15 @@
+{
+  "name": "@unplugin-vue-ce/build",
+  "description": "",
+  "type": "module",
+  "version": "0.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "dev": "cross-env BUILD_MODE=dev tsup-node --config index.ts",
+    "build": "cross-env BUILD_MODE=prod tsup-node --config index.ts && pnpm run gulp:script",
+    "gulp:script": "gulp -require sucrase/register/ts -f gulp-file.ts",
+    "publish:npm": "gulp -require sucrase/register/ts -f publish.ts"
+  }
+}

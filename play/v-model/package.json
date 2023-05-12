@@ -1,0 +1,11 @@
+{
+  "name": "@unplugin-vue-ce/play-v-model",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

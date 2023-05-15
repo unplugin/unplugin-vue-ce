@@ -1,1 +1,1 @@
-# @unplugin-vue-ce/utils
+# @baiwusanyu/unvuece-utils

@@ -1,5 +1,5 @@
 {
-  "name": "@unplugin-vue-ce/v-model",
+  "name": "@baiwusanyu/unvuece-v-model",
   "description": "A vue plugin that extends vue's Custom Element capabilities (v-model)",
   "private": false,
   "type": "module",
@@ -60,7 +60,7 @@
     "vue": "^3.3.2"
   },
   "dependencies": {
-    "@unplugin-vue-ce/utils": "workspace:*",
+    "@baiwusanyu/unvuece-utils": "workspace:*",
     "baiwusanyu-utils": "^1.0.12",
     "estree-walker-ts": "^1.0.0",
     "fast-glob": "^3.2.12",

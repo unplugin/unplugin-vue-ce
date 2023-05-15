@@ -4,6 +4,7 @@
   "private": false,
   "type": "module",
   "version": "0.0.3-beta.0",
+  "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
     "javascript",
@@ -46,12 +47,12 @@
   "scripts": {
     "init": "pnpm i",
     "lint:fix": "eslint --fix ./ --ext .vue,.js,.ts,.jsx,.tsx,.json ",
-    "dev": "pnpm run --filter @unplugin-vue-ce/build dev",
-    "dev:v-model": "pnpm run --filter @unplugin-vue-ce/play-v-model dev",
-    "build": "pnpm run --filter @unplugin-vue-ce/build build",
-    "release": "bumpp package.json packages/*/package.json --commit --push --tag",
+    "dev": "pnpm run --filter @baiwusanyu/unvuece-build dev",
+    "dev:v-model": "pnpm run --filter @baiwusanyu/unvuece-play-v-model dev",
+    "build": "pnpm run --filter @baiwusanyu/unvuece-build build",
+    "release": "bumpp package.json packages/*/package.json utils/*/package.json --commit --push --tag",
     "publish:npm": "pnpm publish --no-git-checks --access public",
-    "publish:script": "pnpm run --filter @unplugin-vue-ce/build publish:npm",
+    "publish:script": "pnpm run --filter @baiwusanyu/unvuece-build publish:npm",
     "clean": "rimraf dist",
     "prepare": "npx simple-git-hooks",
     "test": "vitest",
@@ -68,8 +69,8 @@
     "vue": "^3.3.2"
   },
   "dependencies": {
-    "@unplugin-vue-ce/utils": "workspace:*",
-    "@unplugin-vue-ce/v-model": "workspace:*",
+    "@baiwusanyu/unvuece-utils": "workspace:*",
+    "@baiwusanyu/unvuece-v-model": "workspace:*",
     "ansi-colors": "^4.1.3",
     "baiwusanyu-utils": "^1.0.12",
     "estree-walker-ts": "^1.0.0",

@@ -1,6 +1,6 @@
 export const entry = {
-  'v-model': '../packages/v-model/index.ts', // @unplugin-vue-ce/vModel
-  'utils': '../utils/index.ts', // @unplugin-vue-ce/utils
+  'v-model': '../packages/v-model/index.ts', // @baiwusanyu/unvuece-vModel
+  'utils': '../utils/index.ts', // @baiwusanyu/unvuece-utils
   'index': '../packages/core/index.ts', // @unplugin-vue-ce
 }
 

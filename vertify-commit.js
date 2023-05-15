@@ -1,7 +1,7 @@
 
 import { readFileSync } from 'fs'
 import path from 'path'
-import chalk from 'chalk'
+import color from 'ansi-colors'
 
 const msgPath = path.resolve('.git/COMMIT_EDITMSG')
 const msg = readFileSync(msgPath, 'utf-8').trim()
@@ -11,14 +11,14 @@ const commitRE
 
 if (!commitRE.test(msg)) {
   console.error(
-        `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
+        `  ${color.bgRed.white(' ERROR ')} ${color.red(
             'invalid commit message format.',
         )}\n\n${
-            chalk.red(
+            color.red(
                 '  Proper commit message format is required for automated changelog generation. Examples:\n\n',
             )
-        }    ${chalk.green('fea: add \'comments\' option')}\n`
-        + `    ${chalk.green(
+        }    ${color.green('fea: add \'comments\' option')}\n`
+        + `    ${color.green(
             'fix: handle events on blur',
         )}`,
   )

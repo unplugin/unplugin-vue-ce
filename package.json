@@ -3,7 +3,7 @@
   "description": "A vue plugin that extends vue's Custom Element capabilities (v-model, child style)",
   "private": false,
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "typescript",
     "javascript",

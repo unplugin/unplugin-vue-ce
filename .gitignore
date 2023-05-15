@@ -2,7 +2,7 @@
 /build/node_modules/
 /node_modules/
 /packages/core/node_modules/
-/packages/v-mode/node_modules/
+/packages/v-model/node_modules/
 /play/v-model/node_modules/
 /play/node_modules/
 /utils/node_modules/

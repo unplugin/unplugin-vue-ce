@@ -17,8 +17,8 @@
   "license": "MIT",
   "author": "baiwusanyu-c",
   "homepage": "https://github.com/baiwusanyu-c",
-  "repository": "https://github.com/baiwusanyu-c/unplugin-vue-cssvars",
-  "bugs": "https://github.com/baiwusanyu-c/unplugin-vue-cssvars/issues",
+  "repository": "https://github.com/baiwusanyu-c/unplugin-vue-ce",
+  "bugs": "https://github.com/baiwusanyu-c/unplugin-vue-ce/issues",
   "main": "./index.js",
   "module": "./index.js",
   "types": "./index.d.ts",
@@ -60,7 +60,6 @@
   },
   "peerDependencies": {
     "baiwusanyu-utils": "^1.0.8",
-    "chalk": "^4.1.2",
     "estree-walker-ts": "^1.0.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
@@ -72,7 +71,6 @@
     "@unplugin-vue-ce/utils": "workspace:*",
     "@unplugin-vue-ce/v-model": "workspace:*",
     "baiwusanyu-utils": "^1.0.12",
-    "chalk": "^4.1.2",
     "estree-walker-ts": "^1.0.0",
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
@@ -122,6 +120,9 @@
     "*.{vue,js,ts,jsx,tsx,md,json}": [
       "eslint ./ --fix"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "eslintConfig": {
     "extends": [

@@ -6,4 +6,5 @@ export const entry = {
 
 export const entryPkg = {
   'v-model': '../packages/v-model',
+  'utils': '../utils',
 }

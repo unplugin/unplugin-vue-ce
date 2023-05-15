@@ -83,5 +83,4 @@ export default series(
     const res = await moveREADMEToRootDist(entryPkg)
     return res
   },
-  // TODO：特殊处理  package.json 的 ts 导出
 )

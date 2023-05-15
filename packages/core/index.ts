@@ -6,7 +6,7 @@ const unplugin = createUnplugin<Options>(() => {
     ...unVueCEVModel(),
   }
 })
-export const viteVueCEVModel = unplugin.vite
-export const rollupVueCEVModel = unplugin.rollup
-export const webpackVueCEVModel = unplugin.webpack
-export const esbuildVueCEVModel = unplugin.esbuild
+export const viteVueCE = unplugin.vite
+export const rollupVueCE = unplugin.rollup
+export const webpackVueCE = unplugin.webpack
+export const esbuildVueCE = unplugin.esbuild

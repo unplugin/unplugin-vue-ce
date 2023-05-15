@@ -1,15 +1,14 @@
 # unplugin-vue-ce
-A vue plugin that extends vue's Custom Element capabilities (v-model, child style)
+一个 `vue` 的插件能够让你扩展 `vue` 的 `custom element` 功能（提供 `v-model`、子组件 `style`）
 
-English | [中文](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/README.ZH-CN.md)
+[English](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/README.md) | 中文
 
 ## Feature
 
-* 🧩 It is a function extension of vue
-* 🌈 Compatible with multiple bundled platforms（vite、webpack）
-* ⛰ Support v-model
-*  ⚡ Support child style
-
+* 🧩 它是一个 vue 的功能扩展，让你能够在 css 文件中使用 v-bind
+* 🌈 支持全平台打包工具构建（vite、webpack）
+* ⛰ 支持 `v-model`
+*  ⚡ 支持子组件 `style`
 
 
 ## Install
@@ -17,11 +16,11 @@ English | [中文](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/R
 ```bash
 npm i unplugin-vue-ce -D
 ```
-or
+或
 ```bash
 yarn add unplugin-vue-ce-D
 ```
-or
+或
 ```bash
 pnpm add unplugin-vue-ce -D
 ```

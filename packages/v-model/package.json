@@ -1,6 +1,6 @@
 {
   "name": "@unplugin-vue-ce/v-model",
-  "description": "",
+  "description": "A vue plugin that extends vue's Custom Element capabilities (v-model)",
   "private": false,
   "type": "module",
   "version": "0.0.1",
@@ -12,13 +12,14 @@
     "vue",
     "vue3",
     "vite",
-    "react"
+    "react",
+    "web component"
   ],
   "license": "MIT",
   "author": "baiwusanyu-c",
   "homepage": "https://github.com/baiwusanyu-c",
-  "repository": " ",
-  "bugs": " ",
+  "repository": "https://github.com/baiwusanyu-c/unplugin-vue-cssvars",
+  "bugs": "https://github.com/baiwusanyu-c/unplugin-vue-cssvars/issues",
   "main": "./index.ts",
   "module": "./index.ts",
   "types": "./index.d.ts",

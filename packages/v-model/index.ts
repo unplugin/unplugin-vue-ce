@@ -1,37 +1,38 @@
 import { createUnplugin } from 'unplugin'
-import { createFilter } from '@rollup/pluginutils'
 import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
-import { initOption } from './src/option'
 import { injectIsCEModifiers } from './src/inject/inject-vue-shared'
+import { injectVueRuntime } from './src/inject/inject-vue-runtime'
 import type { Options } from './types'
 const NAME = 'unplugin-vue-ce'
 const unplugin = createUnplugin<Options>(
-  (options: Options = {}): any => {
+  (): any => {
     setGlobalPrefix(`[${NAME}]:`)
-    const userOptions = initOption(options)
-    const filter = createFilter(
-      userOptions.include,
-      userOptions.exclude,
-    )
-
     return {
       name: `${NAME}:v-model`,
-      enforce: 'pre',
+      enforce: 'post',
       async transform(code: string, id: string) {
         let mgcStr = new MagicString(code)
+        // inject 'isCEModifiers' to @vue/shared
+        // build only
+        if (id.includes('/@vue/shared/dist/shared.esm-bundler.js'))
+          mgcStr = injectIsCEModifiers(mgcStr, false)
 
-        // build inject to shared
-        if (id.includes('/@vue/shared/dist/shared.esm-bundler.js')){
-          mgcStr = injectIsCEModifiers(mgcStr)
-        }
+        // injcet runtime code
+        // build only
+        if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
+          mgcStr = injectVueRuntime(mgcStr, false)
 
-        if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js')){
-          code = 'import { isCEModifiers } from \'@vue/shared\';\n' + code + 'isCEModifiers()'
-          console.log('\ncode ####################', code)
-        }
+        // export emit function
+        // build only
+        if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
+          mgcStr = mgcStr.replace('function emit(instance, event, ...rawArgs) {', 'export function emit(instance, event, ...rawArgs) {')
 
-        console.log('\nid ####################', id)
+        // injcet runtime code
+        // dev only
+        if (id.includes('.vite/deps/vue.js'))
+          mgcStr = injectVueRuntime(mgcStr, true)
+
         return {
           code: mgcStr.toString(),
           get map() {

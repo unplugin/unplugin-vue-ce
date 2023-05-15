@@ -3,6 +3,7 @@
 /node_modules/
 /packages/core/node_modules/
 /packages/entry/node_modules/
+/play/v-model/node_modules/
 /play/node_modules/
 /utils/node_modules/
 dist

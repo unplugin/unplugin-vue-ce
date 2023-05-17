@@ -10,6 +10,8 @@
 * ⛰ 支持 `v-model`
 *  ⚡ 支持子组件 `style`
 
+> Tips: ⚠ 本插件会向 vue 运行时注入实现代码，这一点是我必須要告訴您的
+> 如果您使用有任何问题，欢迎提交 issue
 
 ## Install
 
@@ -50,7 +52,7 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import { rollupVueCE } from '@nplugin-vue-ce'
+import { rollupVueCE } from 'unplugin-vue-ce'
 export default {
   plugins: [
     rollupVueCE(),

@@ -10,7 +10,8 @@ English | [中文](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/R
 * ⛰ Support v-model
 *  ⚡ Support child style
 
-
+> Tips: ⚠ This plugin will inject the implementation code into the vue runtime, which is what I have to tell you. 
+> If you have any problems using it, please submit an issue
 
 ## Install
 

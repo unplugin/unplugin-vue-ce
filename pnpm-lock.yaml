@@ -4,10 +4,10 @@ importers:
 
   .:
     dependencies:
-      '@baiwusanyu/unvuece-utils':
+      '@unplugin-vue-ce/utils':
         specifier: workspace:*
         version: link:utils
-      '@baiwusanyu/unvuece-v-model':
+      '@unplugin-vue-ce/v-model':
         specifier: workspace:*
         version: link:packages/v-model
       ansi-colors:
@@ -136,7 +136,7 @@ importers:
 
   packages/v-model:
     dependencies:
-      '@baiwusanyu/unvuece-utils':
+      '@unplugin-vue-ce/utils':
         specifier: workspace:*
         version: link:../../utils
       baiwusanyu-utils:

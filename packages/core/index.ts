@@ -1,6 +1,6 @@
-import { unVueCEVModel } from '@baiwusanyu/unvuece-v-model'
+import { unVueCEVModel } from '@unplugin-vue-ce/v-model'
 import { createUnplugin } from 'unplugin'
-import type { Options } from '@baiwusanyu/unvuece-v-model/types'
+import type { Options } from '@unplugin-vue-ce/v-model/types'
 const unplugin = createUnplugin<Options>(() => {
   return {
     ...unVueCEVModel(),

@@ -3,7 +3,7 @@
   "description": "A vue plugin that extends vue's Custom Element capabilities (v-model, child style)",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.0",
+  "version": "0.0.3-beta.1",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -50,7 +50,7 @@
     "dev": "pnpm run --filter @baiwusanyu/unvuece-build dev",
     "dev:v-model": "pnpm run --filter @baiwusanyu/unvuece-play-v-model dev",
     "build": "pnpm run --filter @baiwusanyu/unvuece-build build",
-    "release": "bumpp package.json packages/*/package.json utils/*/package.json --commit --push --tag",
+    "release": "bumpp package.json packages/*/package.json utils/package.json --commit --push --tag",
     "publish:npm": "pnpm publish --no-git-checks --access public",
     "publish:script": "pnpm run --filter @baiwusanyu/unvuece-build publish:npm",
     "clean": "rimraf dist",

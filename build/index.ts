@@ -30,7 +30,7 @@ if (buildMode === 'prod') {
     const config = JSON.parse(JSON.stringify(baseConfig))
     config.entry = [entry[entryKey]]
     // config.outDir = entry[entryKey]
-    config.external = [/@baiwusanyu/]
+    config.external = [/@unplugin-vue-ce/]
     config.outDir = entryKey === 'index'
       ? path.resolve(process.cwd(), '../dist') : path.resolve(process.cwd(), `../dist/${entryKey}`)
     config.dts = true
@@ -50,7 +50,7 @@ if (buildMode === 'dev') {
     config.dts = false
     config.minify = false
     config.watch = ['../packages/**/**.ts']
-    config.noExternal = [/@baiwusanyu/]
+    config.noExternal = [/@unplugin-vue-ce/]
     configOptions.push(config)
   }
 }

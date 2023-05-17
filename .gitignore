@@ -1,8 +1,7 @@
 # Project exclude paths
 /build/node_modules/
 /node_modules/
-/packages/core/node_modules/
-/packages/v-model/node_modules/
+/packages/**/node_modules/
 /play/v-model/node_modules/
 /play/node_modules/
 /utils/node_modules/

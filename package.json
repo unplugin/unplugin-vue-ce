@@ -69,6 +69,7 @@
     "vue": "^3.3.2"
   },
   "dependencies": {
+    "@unplugin-vue-ce/sub-style": "workspace:*",
     "@unplugin-vue-ce/utils": "workspace:*",
     "@unplugin-vue-ce/v-model": "workspace:*",
     "ansi-colors": "^4.1.3",

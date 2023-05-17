@@ -1,9 +1,9 @@
-import { unVueCEVModel } from '@unplugin-vue-ce/v-model'
+// import { unVueCEVModel } from '@unplugin-vue-ce/v-model'
 import { unVueCESubStyle } from '@unplugin-vue-ce/sub-style'
 import { createUnplugin } from 'unplugin'
 const unplugin = createUnplugin(() => {
   return {
-    ...unVueCEVModel(),
+    // ...unVueCEVModel(),
     ...unVueCESubStyle(),
   }
 })

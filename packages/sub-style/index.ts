@@ -2,6 +2,7 @@ import { createUnplugin } from 'unplugin'
 import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
+import { injectVueRuntime } from './src/inject-vue-runtime'
 
 export const unVueCESubStyle = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
@@ -9,8 +10,12 @@ export const unVueCESubStyle = (): any => {
     name: `${NAME}:sub-style`,
     enforce: 'post',
     async transform(code: string, id: string) {
-      const mgcStr = new MagicString(code)
+      console.log(id)
+      let mgcStr = new MagicString(code)
 
+      // dev only
+      if (id.includes('.vite/deps/vue.js'))
+        mgcStr = injectVueRuntime(mgcStr)
       return {
         code: mgcStr.toString(),
         get map() {

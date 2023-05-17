@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <p class="baz">should be green -- baz</p>
-    </div>
+  <div>
+    <p class="baz">
+      should be green -- baz
+    </p>
+  </div>
 </template>
 
 <style scoped>

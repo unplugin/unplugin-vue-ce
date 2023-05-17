@@ -1,7 +1,7 @@
 <script setup>
-import Foo from './foo.vue';
+import Foo from './foo.vue'
 </script>
 
 <template>
-    <foo></foo>
+  <Foo />
 </template>

@@ -1,14 +1,16 @@
 <script setup>
-import Bar from './bar.vue';
-import Baz from './baz.vue';
+import Bar from './bar.vue'
+import Baz from './baz.vue'
 </script>
 
 <template>
-    <div>
-        <p class="foo">should be red -- foo</p>
-        <bar></bar>
-        <baz></baz>
-    </div>
+  <div>
+    <p class="foo">
+      should be red -- foo
+    </p>
+    <Bar />
+    <Baz />
+  </div>
 </template>
 
 <style scoped>

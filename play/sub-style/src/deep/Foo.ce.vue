@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import Child from "./Child.vue";
+import Child from './Child.vue'
 </script>
 
 <template>
-  <p class="my-red">This should be red </p>
+  <p class="my-red">
+    This should be red
+  </p>
 
-  <Child></Child>
+  <Child />
 </template>
 
 <style scoped>

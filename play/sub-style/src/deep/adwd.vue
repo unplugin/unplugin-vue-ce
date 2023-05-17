@@ -1,7 +1,8 @@
 
-
 <template>
-    <p class="my-green">This should be green</p>
+  <p class="my-green">
+    This should be green
+  </p>
 </template>
 
 <style scoped>

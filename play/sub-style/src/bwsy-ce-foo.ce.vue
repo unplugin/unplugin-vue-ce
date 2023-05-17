@@ -1,11 +1,14 @@
 <template>
   <div>
-    <p class="foo">should be red -- foo</p>
-    <bwsy-bar></bwsy-bar>
+    <p class="foo">
+      should be red -- foo
+    </p>
+    <BwsyBar />
   </div>
 </template>
+
 <script setup>
-import BwsyBar from './bwsy-bar.vue';
+import BwsyBar from './bwsy-bar.vue'
 </script>
 
 <style scoped>

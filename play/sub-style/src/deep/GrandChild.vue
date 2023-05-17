@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import GreatGrandChild from "./GreatGrandChild.vue";
+import GreatGrandChild from './GreatGrandChild.vue'
 </script>
 
 <template>
-    <p class="my-green">This should be green</p>
-    <span><GreatGrandChild></GreatGrandChild></span>
+  <p class="my-green">
+    This should be green
+  </p>
+  <span><GreatGrandChild /></span>
 </template>
 
 <style scoped>

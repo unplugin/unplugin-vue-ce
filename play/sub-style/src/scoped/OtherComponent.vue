@@ -1,17 +1,19 @@
 <script setup>
-import YetAnotherComponent from './YetAnotherComponent.vue';
-import CEorNotCE from './CEorNotCE.vue';
+import { defineCustomElement } from 'vue'
+import YetAnotherComponent from './YetAnotherComponent.vue'
+import CEorNotCE from './CEorNotCE.vue'
 
-//import { defineCustomElement } from 'vue';
-import { defineCustomElement } from 'vue';
+// import { defineCustomElement } from 'vue';
 
-customElements.define('nested-ce', defineCustomElement(CEorNotCE));
+customElements.define('nested-ce', defineCustomElement(CEorNotCE))
 </script>
 
 <template>
-    <p class="my-blue">This should be blue</p>
-    <YetAnotherComponent></YetAnotherComponent>
-    <nested-ce></nested-ce>
+  <p class="my-blue">
+    This should be blue
+  </p>
+  <YetAnotherComponent />
+  <nested-ce />
 </template>
 
 <style>

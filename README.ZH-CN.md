@@ -105,3 +105,12 @@ build({
 })
 ```
 </details>
+
+
+## support v-model
+
+查看更多详情 [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model#readme) 
+
+## Support the style of child components
+
+查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md) 

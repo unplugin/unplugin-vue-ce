@@ -1,5 +1,14 @@
 # @unplugin-vue-ce/sub-style
 
+The implementation principle of `@unplugin-vue-ce/sub-style` comes from [vue/core pr #7942](https://github.com/vuejs/core/pull/7942)
+
+> Tips: ⚠ This plugin will inject the implementation code into the vue runtime, which is what I have to tell you.
+> If you have any problems using it, please submit an issue
+
+## Snapshot
+
+![style.gif](..%2F..%2Fpublic%2Fstyle.gif)
+
 ## Install
 
 ```bash

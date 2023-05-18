@@ -1,10 +1,11 @@
 import { unVueCEVModel } from '@unplugin-vue-ce/v-model'
+import { unVueCESubStyle } from '@unplugin-vue-ce/sub-style'
 import { createUnplugin } from 'unplugin'
-import type { Options } from '@unplugin-vue-ce/v-model/types'
-const unplugin = createUnplugin<Options>(() => {
-  return {
-    ...unVueCEVModel(),
-  }
+const unplugin = createUnplugin(() => {
+  return [
+    unVueCEVModel(),
+    unVueCESubStyle(),
+  ]
 })
 export const viteVueCE = unplugin.vite
 export const rollupVueCE = unplugin.rollup

@@ -1,10 +1,9 @@
 import { createUnplugin } from 'unplugin'
 import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
+import { NAME } from '@unplugin-vue-ce/utils'
 import { injectIsCEModifiers } from './src/inject-vue-shared'
 import { injectVueRuntime } from './src/inject-vue-runtime'
-import type { Options } from './types'
-const NAME = 'unplugin-vue-ce'
 export const unVueCEVModel = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
   return {
@@ -45,7 +44,7 @@ export const unVueCEVModel = (): any => {
     },
   }
 }
-const unplugin = createUnplugin<Options>(unVueCEVModel)
+const unplugin = createUnplugin(unVueCEVModel)
 export const viteVueCEVModel = unplugin.vite
 export const rollupVueCEVModel = unplugin.rollup
 export const webpackVueCEVModel = unplugin.webpack

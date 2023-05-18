@@ -2,34 +2,36 @@ import { createUnplugin } from 'unplugin'
 import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
-import { injectIsCEModifiers } from './src/inject-vue-shared'
 import { injectVueRuntime } from './src/inject-vue-runtime'
+import { injectIsCEModifiers } from './src/inject-vue-shared'
+import { injectEmit } from './src/inject-emit'
+import { injectImport } from './src/inject-import'
 export const unVueCEVModel = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
   return {
     name: `${NAME}:v-model`,
     enforce: 'post',
     async transform(code: string, id: string) {
-      let mgcStr = new MagicString(code)
-      // inject 'isCEModifiers' to @vue/shared
+      const mgcStr = new MagicString(code)
       // build only
       if (id.includes('/@vue/shared/dist/shared.esm-bundler.js'))
-        mgcStr = injectIsCEModifiers(mgcStr, false)
+        injectIsCEModifiers(mgcStr, false)
 
-      // injcet runtime code
       // build only
-      if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
-        mgcStr = injectVueRuntime(mgcStr, false)
+      if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js')) {
+        injectVueRuntime(mgcStr)
+        injectImport(mgcStr)
+      }
 
-      // export emit function
       // build only
       if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
-        mgcStr = mgcStr.replace('function emit(instance, event, ...rawArgs) {', 'export function emit(instance, event, ...rawArgs) {')
+        injectEmit(mgcStr)
 
-      // injcet runtime code
       // dev only
-      if (id.includes('.vite/deps/vue.js'))
-        mgcStr = injectVueRuntime(mgcStr, true)
+      if (id.includes('.vite/deps/vue.js')) {
+        injectVueRuntime(mgcStr)
+        injectIsCEModifiers(mgcStr, true)
+      }
 
       return {
         code: mgcStr.toString(),

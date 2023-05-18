@@ -14,6 +14,4 @@ export const injectIsCEModifiers = (
     mgcStr.prependLeft(0, injectVueSharedContent)
   else
     mgcStr.replace('export {', `${injectVueSharedContent}export { isCEModifiers, `)
-
-  return mgcStr
 }

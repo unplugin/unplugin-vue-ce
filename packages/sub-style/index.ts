@@ -10,12 +10,20 @@ export const unVueCESubStyle = (): any => {
     name: `${NAME}:sub-style`,
     enforce: 'post',
     async transform(code: string, id: string) {
-      console.log(id)
-      let mgcStr = new MagicString(code)
+      const mgcStr = new MagicString(code)
+
+      // build only
+      if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
+        injectVueRuntime(mgcStr)
+
+      // build only
+      if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
+        injectVueRuntime(mgcStr)
 
       // dev only
       if (id.includes('.vite/deps/vue.js'))
-        mgcStr = injectVueRuntime(mgcStr)
+        injectVueRuntime(mgcStr)
+
       return {
         code: mgcStr.toString(),
         get map() {

@@ -31,6 +31,4 @@ export function injectToComponent(
     VariableDeclarationInst = false
     mgcStr.prependRight(node.start! + 1, injectToCompContent)
   }
-
-  return mgcStr
 }

@@ -107,7 +107,7 @@ build({
 </details>
 
 
-## support v-model
+## Support v-model
 
 view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model#readme)
 

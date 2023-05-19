@@ -109,7 +109,7 @@ build({
 
 ## Support v-model
 
-view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model#readme)
+view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model/README.md)
 
 ## Support the style of child components
 

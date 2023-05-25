@@ -1,0 +1,72 @@
+{
+  "name": "@unplugin-vue-ce/switch-shadow",
+  "description": "A vue plugin that extends vue's Custom Element capabilities (free switch shadow)",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0-beta.0",
+  "packageManager": "pnpm@6.32.4",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "utils",
+    "vue",
+    "vue3",
+    "vite",
+    "react",
+    "web component"
+  ],
+  "license": "MIT",
+  "author": "baiwusanyu-c",
+  "homepage": "https://github.com/baiwusanyu-c",
+  "repository": "https://github.com/baiwusanyu-c/unplugin-vue-ce",
+  "bugs": "https://github.com/baiwusanyu-c/unplugin-vue-ce/issues",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.js",
+      "require": "./index.cjs",
+      "import": "./index.ts"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "README.md"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*",
+        "./index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "publish:npm": "pnpm publish --no-git-checks --access public"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "baiwusanyu-utils": "^1.0.8",
+    "estree-walker-ts": "^1.0.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1",
+    "magic-string": "^0.30.0",
+    "unplugin": "^1.3.1",
+    "vue": "^3.3.2"
+  },
+  "dependencies": {
+    "@unplugin-vue-ce/utils": "workspace:*",
+    "baiwusanyu-utils": "^1.0.12",
+    "estree-walker-ts": "^1.0.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.1",
+    "magic-string": "^0.30.0",
+    "unplugin": "^1.3.1",
+    "vue": "^3.3.2"
+  }
+}

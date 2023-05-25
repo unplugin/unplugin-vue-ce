@@ -114,3 +114,7 @@ view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unp
 ## Support the style of child components
 
 view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
+
+## Support switch shadow
+
+view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 

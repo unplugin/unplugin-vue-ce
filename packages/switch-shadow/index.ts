@@ -16,31 +16,30 @@ export const unVueCEShadow = (): any => {
 
       // build only
       if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
+        console.log(id)
+
       // injectVueRuntime(mgcStr)
 
       // build only
-      {
-        if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
-        // injectVueRuntime(mgcStr)
+      if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
+        console.log(id)
 
-        // dev only
-        {
-          if (id.includes('.vite/deps/vue.js'))
-          //  injectVueRuntime(mgcStr)
+      // injectVueRuntime(mgcStr)
 
-          {
-            return {
-              code: mgcStr.toString(),
-              get map() {
-                return mgcStr.generateMap({
-                  source: id,
-                  includeContent: true,
-                  hires: true,
-                })
-              },
-            }
-          }
-        }
+      // dev only
+      if (id.includes('.vite/deps/vue.js'))
+        console.log(id)
+
+      //  injectVueRuntime(mgcStr)
+      return {
+        code: mgcStr.toString(),
+        get map() {
+          return mgcStr.generateMap({
+            source: id,
+            includeContent: true,
+            hires: true,
+          })
+        },
       }
     },
   }

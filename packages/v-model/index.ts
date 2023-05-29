@@ -11,6 +11,9 @@ export const unVueCEVModel = (): any => {
   return {
     name: `${NAME}:v-model`,
     enforce: 'post',
+    transformInclude(id: string) {
+      return id.endsWith('.js')
+    },
     async transform(code: string, id: string) {
       const mgcStr = new MagicString(code)
       // build only

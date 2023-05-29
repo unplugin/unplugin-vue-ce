@@ -8,8 +8,8 @@ export const unVueCEShadow = (): any => {
   return {
     name: `${NAME}:switch-shadow`,
     enforce: 'post',
-    transformInclude(id: string) {
-      return id.endsWith('.js')
+    transformInclude() {
+      return true
     },
     async transform(code: string, id: string) {
       const mgcStr = new MagicString(code)

@@ -9,8 +9,8 @@ export const unVueCESubStyle = (): any => {
   return {
     name: `${NAME}:sub-style`,
     enforce: 'post',
-    transformInclude(id: string) {
-      return id.endsWith('.js')
+    transformInclude() {
+      return true
     },
     async transform(code: string, id: string) {
       const mgcStr = new MagicString(code)

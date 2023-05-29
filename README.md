@@ -107,13 +107,14 @@ build({
 </details>
 
 
-## support v-model
+## Support v-model
 
-view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model#readme)
+view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model/README.md)
 
 ## Support the style of child components
 
 view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
+
 
 ## Support switch shadow
 

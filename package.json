@@ -71,9 +71,9 @@
   },
   "dependencies": {
     "@unplugin-vue-ce/sub-style": "workspace:*",
+    "@unplugin-vue-ce/switch-shadow": "workspace:*",
     "@unplugin-vue-ce/utils": "workspace:*",
     "@unplugin-vue-ce/v-model": "workspace:*",
-    "@unplugin-vue-ce/switch-shadow": "workspace:*",
     "ansi-colors": "^4.1.3",
     "baiwusanyu-utils": "^1.0.12",
     "estree-walker-ts": "^1.0.0",

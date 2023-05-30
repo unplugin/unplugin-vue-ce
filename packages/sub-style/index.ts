@@ -24,7 +24,8 @@ export const unVueCESubStyle = (): any => {
         injectVueRuntime(mgcStr)
 
       // dev only
-      if (id.includes('.vite/deps/vue.js'))
+      if (id.includes('.vite/deps/vue.js')
+        || (id.includes('.vite/deps/chunk') && code.includes('__isVue')))
         injectVueRuntime(mgcStr)
 
       return {

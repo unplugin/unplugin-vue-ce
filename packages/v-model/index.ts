@@ -31,7 +31,8 @@ export const unVueCEVModel = (): any => {
         injectEmit(mgcStr)
 
       // dev only
-      if (id.includes('.vite/deps/vue.js')) {
+      if (id.includes('.vite/deps/vue.js')
+        || (id.includes('.vite/deps/chunk') && code.includes('__isVue'))) {
         injectVueRuntime(mgcStr)
         injectIsCEModifiers(mgcStr, true)
       }

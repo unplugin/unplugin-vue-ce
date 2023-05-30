@@ -112,14 +112,21 @@ build({
 </details>
 
 
-## support v-model
+## 🎯 Support v-model
 
-查看更多详情 [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model#readme) 
+查看更多详情 [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model/README.md)
 
-## Support the style of child components
+## 🎃 Support the style of child components
 
-查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md) 
+查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
 
-## Support switch shadow
+## 🍻 Support using web component as root component
+
+查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
+
+## 🚧 Support switch shadow (TODO)
 
 查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
+
+## Thanks
+* [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

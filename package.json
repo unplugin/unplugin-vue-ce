@@ -70,6 +70,7 @@
     "vue": "^3.3.2"
   },
   "dependencies": {
+    "@unplugin-vue-ce/ce-app": "workspace:*",
     "@unplugin-vue-ce/sub-style": "workspace:*",
     "@unplugin-vue-ce/switch-shadow": "workspace:*",
     "@unplugin-vue-ce/utils": "workspace:*",

@@ -110,15 +110,21 @@ build({
 </details>
 
 
-## Support v-model
+## 🎯 Support v-model
 
 view more details [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model/README.md)
 
-## Support the style of child components
+## 🎃 Support the style of child components
 
 view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
 
+## 🍻 Support using web component as root component
 
-## Support switch shadow
+view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
+
+## 🚧 Support switch shadow (TODO)
 
 view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
+
+## Thanks
+ * [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

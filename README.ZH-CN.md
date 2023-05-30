@@ -122,7 +122,7 @@ build({
 
 ## 🍻 Support using web component as root component
 
-查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
+查看更多详情 [@unplugin-vue-ce/ce-app](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
 
 ## 🚧 Support switch shadow (TODO)
 

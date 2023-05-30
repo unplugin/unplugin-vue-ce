@@ -120,7 +120,7 @@ view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/u
 
 ## 🍻 Support using web component as root component
 
-view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
+view more details [@unplugin-vue-ce/ce-app](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
 
 ## 🚧 Support switch shadow (TODO)
 

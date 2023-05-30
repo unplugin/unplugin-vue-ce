@@ -15,10 +15,10 @@ export function createCEApp(
   rootProps?: Data) {
   const pluginsSet = new Set()
   const plugins: PluginsType = []
-  const usePlugin = (plugin: Plugin, option: PluginOption) => {
+  const usePlugin = (plugin: Plugin, option?: PluginOption) => {
     if (!pluginsSet.has(plugin)) {
       pluginsSet.add(plugin)
-      plugins.push({ plugin, option })
+      plugins.push({ plugin, option: option || {} })
     }
   }
 

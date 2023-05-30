@@ -28,6 +28,9 @@ pnpm add unplugin-vue-ce -D
 ```
 
 ## Usage
+
+> Tips: You need to enable the `customElement` option of `@vitejs/plugin-vue`
+
 <details>
 <summary>Vite</summary>
 

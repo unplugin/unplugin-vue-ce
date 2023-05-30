@@ -28,6 +28,9 @@ pnpm add unplugin-vue-ce -D
 ```
 
 ## Usage
+
+> Tips: 你需要开启 `@vitejs/plugin-vue` 的 `customElement` 选项
+
 <details>
 <summary>Vite</summary>
 
@@ -39,7 +42,9 @@ import vue from '@vitejs/plugin-vue'
 import type { PluginOption } from 'vite'
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      customElement: true,
+    }),
     viteVueCE() as PluginOption,
   ],
 })

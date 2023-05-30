@@ -24,6 +24,9 @@ pnpm add @unplugin-vue-ce/sub-style
 ```
 
 ## Usage
+
+> Tips: You need to enable the `customElement` option of `@vitejs/plugin-vue`
+
 <details>
 <summary>Vite</summary>
 

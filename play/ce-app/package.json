@@ -1,0 +1,16 @@
+{
+  "name": "@unplugin-vue-ce/play-ce-app",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@unplugin-vue-ce/ce-app": "workspace:*",
+    "pinia": "^2.0.36",
+    "vue-router": "^4.2.0"
+  }
+}

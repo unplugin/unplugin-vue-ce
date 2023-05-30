@@ -1,0 +1,3 @@
+<template>
+  <ce-entry />
+</template>

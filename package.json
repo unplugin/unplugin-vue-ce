@@ -50,6 +50,7 @@
     "dev": "pnpm run --filter @unplugin-vue-ce/build dev",
     "dev:v-model": "pnpm run --filter @unplugin-vue-ce/play-v-model dev",
     "dev:sub-style": "pnpm run --filter @unplugin-vue-ce/play-sub-style dev",
+    "dev:ce-app": "pnpm run --filter @unplugin-vue-ce/play-ce-app dev",
     "build": "pnpm run --filter @unplugin-vue-ce/build build",
     "release": "bumpp package.json packages/*/package.json utils/package.json --commit --push --tag",
     "publish:npm": "pnpm publish --no-git-checks --access public",

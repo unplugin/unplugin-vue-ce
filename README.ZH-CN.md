@@ -126,7 +126,7 @@ build({
 
 ## 🚧 Support switch shadow (TODO)
 
-查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
+查看更多详情 [@unplugin-vue-ce/switch-shadow](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
 
 ## Thanks
 * [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

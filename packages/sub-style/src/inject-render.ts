@@ -6,15 +6,13 @@ import type {
   VariableDeclarator,
 } from '@babel/types'
 
-const injectToUnMountContent = '\n'
-  + '      if (\n'
-  + '        vnode.component.isCEChild &&\n'
-  + '        vnode.component.cecStyleIds &&\n'
-  + '        vnode.component.removeCEChildStyle\n'
-  + '      ) {\n'
-  + '        vnode.component.removeCEChildStyle(vnode.component.cecStyleIds);\n'
-  + '        vnode.component.cecStyleIds = null;\n'
-  + '      }\n'
+const injectToUnMountContent = ''
+  + 'if (vnode.component.isCEChild && vnode.component.removeCEChildStyle) {\n'
+  + '        vnode.component.removeCEChildStyle(\n'
+  + '          vnode.component.type.styles,\n'
+  + '          vnode.component.uid\n'
+  + '        )\n'
+  + '      }'
 
 const injectToBaseCreateRendererContent = '\n'
   + '         if (\n'

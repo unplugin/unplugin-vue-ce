@@ -6,7 +6,7 @@ The implementation principle of `@unplugin-vue-ce/ce-app` comes from [vue-web-co
 
 ## Snapshot
 
-TODO
+![ce-app.gif](..%2F..%2Fpublic%2Fce-app.gif)
 
 ## Install
 

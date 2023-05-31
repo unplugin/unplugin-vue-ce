@@ -17,7 +17,7 @@ if (!commitRE.test(msg)) {
             color.red(
                 '  Proper commit message format is required for automated changelog generation. Examples:\n\n',
             )
-        }    ${color.green('fea: add \'comments\' option')}\n`
+        }    ${color.green('feat: add \'comments\' option')}\n`
         + `    ${color.green(
             'fix: handle events on blur',
         )}`,

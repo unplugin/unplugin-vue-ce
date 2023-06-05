@@ -9,11 +9,21 @@ import type { Options } from '../core'
 
 export const unVueCESubStyle = (options: Options = {}): any => {
   setGlobalPrefix(`[${NAME}]:`)
-  debugger
   const presetCSS = atomicCSSPreset[options.css as atomicCSSType]
-  return {
+  return [{
     name: `${NAME}:sub-style`,
     enforce: 'post',
+    resolveId(id: string) {
+      if (id === '@virtual:tailwind')
+        return '\0@virtual:tailwind'
+    },
+    load(id: string) {
+      if (id === '\0@virtual:tailwind') {
+        return {
+          code: '',
+        }
+      }
+    },
     transformInclude() {
       return true
     },
@@ -44,7 +54,7 @@ export const unVueCESubStyle = (options: Options = {}): any => {
         },
       }
     },
-  }
+  }]
 }
 const unplugin = createUnplugin(unVueCESubStyle)
 export const viteVueCESubStyle = unplugin.vite

@@ -1,10 +1,14 @@
 export type atomicCSSType = 'tailwind' | 'windi' | 'uno'
-export const tailwindCSS = '@tailwind base;\n'
+export const virtualTailwind = '@virtual:tailwind'
+export const tailwindCSS = ''
+  + '<style>'
+  + '@tailwind base;\n'
   + '@tailwind components;\n'
   + '@tailwind utilities;'
+  + '</style>'
 
 export const atomicCSSPreset = {
-  tailwind: tailwindCSS,
+  [virtualTailwind]: tailwindCSS,
   uno: '',
   windi: '',
 }

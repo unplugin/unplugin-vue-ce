@@ -2,10 +2,15 @@ import { createUnplugin } from 'unplugin'
 import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
-import { injectVueRuntime } from './src/inject-vue-runtime'
+import { injectVueRuntime } from './src/inject/inject-vue-runtime'
+import { atomicCSSPreset } from './src/atomic-css'
+import type { atomicCSSType } from './src/atomic-css'
+import type { Options } from '../core'
 
-export const unVueCESubStyle = (): any => {
+export const unVueCESubStyle = (options: Options = {}): any => {
   setGlobalPrefix(`[${NAME}]:`)
+  debugger
+  const presetCSS = atomicCSSPreset[options.css as atomicCSSType]
   return {
     name: `${NAME}:sub-style`,
     enforce: 'post',

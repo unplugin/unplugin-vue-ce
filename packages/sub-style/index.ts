@@ -3,10 +3,11 @@ import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
 import { injectVueRuntime } from './src/inject/inject-vue-runtime'
-import { atomicCSSPreset, virtualTailwind } from './src/atomic-css'
+import { atomicCSSPreset, virtualTailwind, virtualUno, virtualWindi } from './src/atomic-css'
 
 export const unVueCESubStyle = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
+  let cssCompileRes = ''
   return [
     {
       name: `${NAME}:sub-style:pre`,
@@ -16,7 +17,7 @@ export const unVueCESubStyle = (): any => {
           return `\0${id}`
       },
       load(id: string) {
-        if (id === `\0${virtualTailwind}`) {
+        if (id === `\0${virtualTailwind}` || id === `\0${virtualWindi}` || id === `\0${virtualUno}`) {
           return {
             code: '',
           }
@@ -26,19 +27,30 @@ export const unVueCESubStyle = (): any => {
         return true
       },
       async transform(code: string, id: string) {
-        if (id.endsWith('.vue') && code.includes(virtualTailwind)) {
-          const mgcStr = new MagicString(code)
+        const mgcStr = new MagicString(code)
+        if (id.includes('__uno.css'))
+          cssCompileRes = code
+
+        if (id.endsWith('.vue') && code.includes(virtualTailwind))
           mgcStr.prependRight(mgcStr.length(), atomicCSSPreset[virtualTailwind])
-          return {
-            code: mgcStr.toString(),
-            get map() {
-              return mgcStr.generateMap({
-                source: id,
-                includeContent: true,
-                hires: true,
-              })
-            },
+
+        if (id.endsWith('.vue') && code.includes(virtualUno)){
+          mgcStr.prependRight(mgcStr.length(), `<style>${cssCompileRes}</style>`)
+          if(cssCompileRes.includes('text-red')){
+            console.log('cssCompileRes ######################################\n', cssCompileRes)
+            console.log('code ######################################\n', mgcStr.toString())
           }
+        }
+
+        return {
+          code: mgcStr.toString(),
+          get map() {
+            return mgcStr.generateMap({
+              source: id,
+              includeContent: true,
+              hires: true,
+            })
+          },
         }
       },
     },

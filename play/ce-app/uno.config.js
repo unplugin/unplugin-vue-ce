@@ -1,4 +1,6 @@
-module.exports = {
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     colors: {
@@ -14,4 +16,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+})

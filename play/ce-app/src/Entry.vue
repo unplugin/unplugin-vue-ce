@@ -1,5 +1,6 @@
 <script setup>
-import '@virtual:tailwind'
+import 'uno.css'
+import '@virtual:uno'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { useCounterStore } from './stores/counter'

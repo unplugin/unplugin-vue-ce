@@ -104,3 +104,25 @@ build({
 })
 ```
 </details>
+
+## About Tailwind CSS
+Since vue enables shadow dom by default, 
+it will isolate the style, 
+so you need to add the root component of each web component to add the reference style:
+```html
+<!-- xxx.vue -->
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+</style>
+```
+or
+```html
+<!-- xxx.vue -->
+<script>
+  import '@virtual:taiwind'
+</script>
+```
+## About Windi CSS(TODO)
+## About Uno CSS(TODO)

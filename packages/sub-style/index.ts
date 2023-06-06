@@ -3,7 +3,7 @@ import { setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
 import { injectVueRuntime } from './src/inject/inject-vue-runtime'
-import { atomicCSSPreset, virtualTailwind, virtualUno, virtualWindi } from './src/atomic-css'
+import { atomicCSSPreset, virtualTailwind, virtualUno } from './src/atomic-css'
 
 export const unVueCESubStyle = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
@@ -16,7 +16,7 @@ export const unVueCESubStyle = (): any => {
           return `\0${id}`
       },
       load(id: string) {
-        if (id === `\0${virtualTailwind}` || id === `\0${virtualWindi}` || id === `\0${virtualUno}`) {
+        if (id === `\0${virtualTailwind}` || id === `\0${virtualUno}`) {
           return {
             code: '',
           }

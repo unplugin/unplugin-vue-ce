@@ -124,15 +124,14 @@ or
   import '@virtual:taiwind'
 </script>
 ```
-## About Windi CSS(TODO)
-## About Uno CSS(TODO)
+
+## About Uno CSS
 Only postcss plugins are supported (See: https://unocss.dev/integrations/postcss#install),  
 you need to add the root component of each web component to add the reference style:
 
 ```html
 <!-- xxx.vue -->
 <style>
-    /* style.css */
     @unocss preflights;
     @unocss default;
     @unocss;
@@ -145,3 +144,7 @@ or
   import '@virtual:uno'
 </script>
 ```
+
+## About Windi CSS
+Windi css is not supported
+[Windi CSS is Sunsetting](https://windicss.org/posts/sunsetting.html)

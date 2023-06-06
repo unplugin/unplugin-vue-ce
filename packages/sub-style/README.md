@@ -126,3 +126,22 @@ or
 ```
 ## About Windi CSS(TODO)
 ## About Uno CSS(TODO)
+Only postcss plugins are supported (See: https://unocss.dev/integrations/postcss#install),  
+you need to add the root component of each web component to add the reference style:
+
+```html
+<!-- xxx.vue -->
+<style>
+    /* style.css */
+    @unocss preflights;
+    @unocss default;
+    @unocss;
+</style>
+```
+or
+```html
+<!-- xxx.vue -->
+<script>
+  import '@virtual:uno'
+</script>
+```

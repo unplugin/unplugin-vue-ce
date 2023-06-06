@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@unocss/postcss": "^0.53.0",
     "@unplugin-vue-ce/ce-app": "workspace:*",
     "autoprefixer": "^10.4.14",
     "pinia": "^2.0.36",
+    "postcss": "^8.4.24",
     "unocss": "^0.53.0",
     "vue-router": "^4.2.0"
   }

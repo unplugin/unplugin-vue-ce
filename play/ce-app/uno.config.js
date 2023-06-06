@@ -1,5 +1,5 @@
-import { defineConfig } from 'unocss'
 
+import { defineConfig, presetUno } from 'unocss'
 export default defineConfig({
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
@@ -16,4 +16,5 @@ export default defineConfig({
     },
   },
   plugins: [],
+  presets: [presetUno()],
 })

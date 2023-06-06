@@ -1,5 +1,4 @@
 <script setup>
-import 'uno.css'
 import '@virtual:uno'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'

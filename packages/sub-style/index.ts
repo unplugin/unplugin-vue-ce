@@ -7,7 +7,6 @@ import { atomicCSSPreset, virtualTailwind, virtualUno, virtualWindi } from './sr
 
 export const unVueCESubStyle = (): any => {
   setGlobalPrefix(`[${NAME}]:`)
-  let cssCompileRes = ''
   return [
     {
       name: `${NAME}:sub-style:pre`,
@@ -28,19 +27,11 @@ export const unVueCESubStyle = (): any => {
       },
       async transform(code: string, id: string) {
         const mgcStr = new MagicString(code)
-        if (id.includes('__uno.css'))
-          cssCompileRes = code
-
         if (id.endsWith('.vue') && code.includes(virtualTailwind))
           mgcStr.prependRight(mgcStr.length(), atomicCSSPreset[virtualTailwind])
 
-        if (id.endsWith('.vue') && code.includes(virtualUno)){
-          mgcStr.prependRight(mgcStr.length(), `<style>${cssCompileRes}</style>`)
-          if(cssCompileRes.includes('text-red')){
-            console.log('cssCompileRes ######################################\n', cssCompileRes)
-            console.log('code ######################################\n', mgcStr.toString())
-          }
-        }
+        if (id.endsWith('.vue') && code.includes(virtualUno))
+          mgcStr.prependRight(mgcStr.length(), atomicCSSPreset[virtualUno])
 
         return {
           code: mgcStr.toString(),
@@ -57,17 +48,6 @@ export const unVueCESubStyle = (): any => {
     {
       name: `${NAME}:sub-style:post`,
       enforce: 'post',
-      resolveId(id: string) {
-        if (id === virtualTailwind)
-          return `\0${virtualTailwind}`
-      },
-      load(id: string) {
-        if (id === `\0${virtualTailwind}`) {
-          return {
-            code: '',
-          }
-        }
-      },
       transformInclude() {
         return true
       },

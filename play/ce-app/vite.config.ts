@@ -1,7 +1,6 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import UnoCSS from 'unocss/vite'
 import { viteVueCE } from '../../dist'
 export default defineConfig({
   plugins: [
@@ -9,7 +8,6 @@ export default defineConfig({
       customElement: true,
     }),
     viteVueCE(),
-    UnoCSS(),
   ],
   resolve: {
     alias: {
@@ -18,5 +16,6 @@ export default defineConfig({
   },
   build: {
     minify: false,
+    sourcemap: false,
   },
 })

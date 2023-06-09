@@ -3,7 +3,7 @@
   "description": "A vue plugin that extends vue's Custom Element capabilities (sub component style)",
   "private": false,
   "type": "module",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0-beta.9",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",

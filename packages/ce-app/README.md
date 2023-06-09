@@ -33,8 +33,11 @@ import Entry from './Entry.vue'
 import router from './router'
 import { createCEApp } from "@unplugin-vue-ce/ce-app";
 const app = createCEApp(App)
+// use plugin
 app.use(createPinia())
 app.use(router)
+// provide & inject
+app.provide('message', 'hello')
 // vue-app is web component name
 app.mount('vue-app')
 

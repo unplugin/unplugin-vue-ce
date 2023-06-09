@@ -1,9 +1,11 @@
 <script setup>
 import '@virtual:uno'
+import { inject } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { useCounterStore } from './stores/counter'
 const { increment, getV } = useCounterStore()
+const msg = inject('message')
 </script>
 
 <template>
@@ -19,6 +21,7 @@ const { increment, getV } = useCounterStore()
 
     <div class="wrapper">
       <HelloWorld :msg="`You did it! ${getV()}`" />
+      <h2> inject: {{ msg }} </h2>
       <nav>
         <RouterLink to="/">
           Home

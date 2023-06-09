@@ -9,6 +9,7 @@ import router from './router'
 const app = createCEApp(App)
 app.use(createPinia())
 app.use(router)
+app.provide('message', 'hello')
 app.mount('vue-app')
 
 const ceEntry = defineCustomElement(Entry)

@@ -22,13 +22,11 @@ export function createCEApp(
     }
   }
 
-  const app: App | undefined = undefined
+  const app: App = createApp(rootComponent)
   const rootCEComponent = () => defineCustomElement({
     setup() {
-      const app = createApp(rootComponent)
-
       plugins.forEach((value) => {
-        app.use(value.plugin, value.option)
+        app!.use(value.plugin, value.option)
       })
 
       const inst = getCurrentInstance()
@@ -41,9 +39,9 @@ export function createCEApp(
 
   const mount = (ceName: string) => {
     customElements.define(ceName, rootCEComponent())
-    return app
   }
   return {
+    ...app,
     mount,
     use: usePlugin,
   }

@@ -1,6 +1,6 @@
 # @unplugin-vue-ce/switch-shadow
 
-The implementation principle of `@unplugin-vue-ce/switch-shadow` comes from [TODO](TODO)
+The implementation principle of `@unplugin-vue-ce/switch-shadow` comes from [vue/core pr #7971](https://github.com/vuejs/core/pull/7971)
 
 > Tips: ⚠ This plugin will inject the implementation code into the vue runtime, which is what I have to tell you.
 > If you have any problems using it, please submit an issue

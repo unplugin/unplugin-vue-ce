@@ -124,7 +124,7 @@ view more details [@unplugin-vue-ce/ce-app](https://github.com/baiwusanyu-c/unpl
 
 ## 🚧 Support switch shadow (TODO)
 
-view more details [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
+view more details [@unplugin-vue-ce/switch-shadow](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
 
 ## Thanks
  * [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

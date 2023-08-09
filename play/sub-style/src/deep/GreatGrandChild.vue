@@ -1,4 +1,3 @@
-
 <template>
   <p class="my-grey">
     This should be grey

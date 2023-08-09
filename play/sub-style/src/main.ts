@@ -3,9 +3,7 @@
   defineCustomElement,
 } from '../patches/vue.esm-browser.js'; */
 
-import {
-  defineCustomElement,
-} from 'vue'
+import { defineCustomElement } from 'vue'
 
 /* import App from './App.vue';
 import Foo from './bwsy-ce-foo.ce.vue';
@@ -35,12 +33,17 @@ app.config.compilerOptions.isCustomElement = (tag) => {
   return tag === 'vue-app';
 }; */
 
-import App from './scoped/my-component.vue'
+/* import App from './scoped/my-component.vue'
 // const app = createApp(App);
 
 const ceApp = defineCustomElement(App)
-customElements.define('vue-app', ceApp)
+customElements.define('vue-app', ceApp) */
+
 /*
 app.config.compilerOptions.isCustomElement = (tag) => {
   return tag === 'vue-app';
 }; */
+
+import App from './nested-same-component/same.vue'
+const ceApp = defineCustomElement(App)
+customElements.define('vue-app', ceApp)

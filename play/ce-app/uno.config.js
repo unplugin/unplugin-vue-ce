@@ -1,4 +1,3 @@
-
 import { defineConfig, presetUno } from 'unocss'
 export default defineConfig({
   content: ['./src/**/*.{vue,js,ts,jsx,tsx}'],

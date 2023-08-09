@@ -1,4 +1,3 @@
-
 <template>
   <p
     class="my-red"

@@ -1,4 +1,3 @@
-
 <template>
   <p class="my-green">
     This should be green

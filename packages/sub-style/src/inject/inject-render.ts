@@ -15,7 +15,7 @@ const injectToUnMountContent = ''
   + '      }'
 
 const injectToBaseCreateRendererContent = 'if (instance && instance.parent) {\n'
-  + '            if (!instance.parent.type.__asyncLoader || instance.parent.type.__asyncLoader && instance.parent.parent && instance.parent.parent.isCE) {\n'
+  + '            if (!(instance.parent.type.__asyncLoader && instance.parent.isCE)) {\n'
   + '              const styles = instance.isCEChild && instance.type.styles || null;\n'
   + '              if (instance.addCEChildStyle && styles) {\n'
   + '                instance.addCEChildStyle(styles, instance);\n'

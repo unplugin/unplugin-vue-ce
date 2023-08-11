@@ -3,7 +3,7 @@
   "description": "A vue plugin that extends vue's Custom Element capabilities (free switch shadow)",
   "private": false,
   "type": "module",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-beta.12",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",

@@ -1,5 +1,5 @@
 import { createUnplugin } from 'unplugin'
-import { setGlobalPrefix } from 'baiwusanyu-utils'
+import { normalizePath, setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
 import { injectVueRuntime } from './src/inject-vue-runtime'
@@ -11,28 +11,29 @@ export const unVueCEVModel = (): any => {
   return {
     name: `${NAME}:v-model`,
     enforce: 'post',
-    transformInclude() {
-      return true
+    transformInclude(id: string) {
+      return !id.endsWith('.html')
     },
     async transform(code: string, id: string) {
       const mgcStr = new MagicString(code)
-      // build only
-      if (id.includes('/@vue/shared/dist/shared.esm-bundler.js'))
+      const formatId = normalizePath(id)
+      // build only / webpack dev
+      if (formatId.includes('/@vue/shared/dist/shared.esm-bundler.js'))
         injectIsCEModifiers(mgcStr, false)
 
-      // build only
-      if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js')) {
+      // build only / webpack dev
+      if (formatId.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js')) {
         injectVueRuntime(mgcStr)
         injectImport(mgcStr)
       }
 
-      // build only
-      if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
+      // build only / webpack dev
+      if (formatId.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
         injectEmit(mgcStr)
 
-      // dev only
-      if (id.includes('.vite/deps/vue.js')
-        || (id.includes('.vite/deps/chunk') && code.includes('__isVue'))) {
+      // vite dev only
+      if (formatId.includes('.vite/deps/vue.js')
+        || (formatId.includes('.vite/deps/chunk') && code.includes('__isVue'))) {
         injectVueRuntime(mgcStr)
         injectIsCEModifiers(mgcStr, true)
       }

@@ -5,8 +5,8 @@ import { createUnplugin } from 'unplugin'
 const unplugin = createUnplugin(() => {
   return [
     unVueCEVModel(),
-    unVueCESubStyle(),
-    unVueCEShadow(),
+    ...unVueCESubStyle(),
+    // unVueCEShadow(),
   ]
 })
 export const viteVueCE = unplugin.vite

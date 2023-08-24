@@ -1,5 +1,5 @@
 import { createUnplugin } from 'unplugin'
-import { setGlobalPrefix } from 'baiwusanyu-utils'
+import { normalizePath, setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
 
@@ -8,28 +8,29 @@ export const unVueCEShadow = (): any => {
   return {
     name: `${NAME}:switch-shadow`,
     enforce: 'post',
-    transformInclude() {
-      return true
+    transformInclude(id: string) {
+      return !id.endsWith('.html')
     },
     async transform(code: string, id: string) {
+      const formatId = normalizePath(id)
       const mgcStr = new MagicString(code)
 
-      // build only
-      if (id.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
-        console.log(id)
+      // build only / webpack dev
+      if (formatId.includes('@vue/runtime-dom/dist/runtime-dom.esm-bundler.js'))
+        console.log(formatId)
 
       // injectVueRuntime(mgcStr)
 
-      // build only
-      if (id.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
-        console.log(id)
+      // build only / webpack dev
+      if (formatId.includes('@vue/runtime-core/dist/runtime-core.esm-bundler.js'))
+        console.log(formatId)
 
       // injectVueRuntime(mgcStr)
 
-      // dev only
-      if (id.includes('.vite/deps/vue.js')
-        || (id.includes('.vite/deps/chunk') && code.includes('__isVue')))
-        console.log(id)
+      // vite dev only
+      if (formatId.includes('.vite/deps/vue.js')
+        || (formatId.includes('.vite/deps/chunk') && code.includes('__isVue')))
+        console.log(formatId)
 
       //  injectVueRuntime(mgcStr)
       return {

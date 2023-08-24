@@ -48,12 +48,6 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
     devDependencies:
-      '@babel/parser':
-        specifier: ^7.22.10
-        version: 7.22.10
-      '@babel/types':
-        specifier: ^7.22.10
-        version: 7.22.10
       '@baiwusanyu/eslint-config':
         specifier: ^1.0.14
         version: 1.0.14(eslint@8.46.0)(typescript@5.1.6)
@@ -176,6 +170,12 @@ importers:
 
   packages/sub-style:
     dependencies:
+      '@babel/parser':
+        specifier: ^7.22.10
+        version: 7.22.10
+      '@babel/types':
+        specifier: ^7.22.10
+        version: 7.22.10
       '@unplugin-vue-ce/utils':
         specifier: workspace:*
         version: link:../../utils
@@ -230,6 +230,12 @@ importers:
 
   packages/v-model:
     dependencies:
+      '@babel/parser':
+        specifier: ^7.22.10
+        version: 7.22.10
+      '@babel/types':
+        specifier: ^7.22.10
+        version: 7.22.10
       '@unplugin-vue-ce/utils':
         specifier: workspace:*
         version: link:../../utils

@@ -117,7 +117,7 @@ so you need to add the root component of each web component to add the reference
     @tailwind utilities;
 </style>
 ```
-or
+or (only vite)
 ```html
 <!-- xxx.vue -->
 <script>
@@ -137,7 +137,7 @@ you need to add the root component of each web component to add the reference st
     @unocss;
 </style>
 ```
-or
+or (only vite)
 ```html
 <!-- xxx.vue -->
 <script>

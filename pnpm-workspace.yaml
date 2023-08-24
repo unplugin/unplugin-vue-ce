@@ -1,5 +1,7 @@
 packages:
   - 'packages/**'
   - build
-  - 'play/**'
+  - 'play/ce-app'
+  - 'play/sub-style'
+  - 'play/v-model'
   - utils

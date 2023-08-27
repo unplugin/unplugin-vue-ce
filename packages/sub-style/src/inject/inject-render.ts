@@ -34,6 +34,7 @@ export function injectToRenderer(
     isComponentUpdateFnIdentifier = true
 
   if (isComponentUpdateFnIdentifier
+      && parent
     && parent.type === 'VariableDeclarator'
     && node.type === 'Identifier'
     && node.name === 'subTree') {
@@ -45,6 +46,7 @@ export function injectToRenderer(
     isUnmountIdentifier = true
 
   if (isUnmountIdentifier
+      && parent
     && parent.type === 'CallExpression'
     && node.type === 'Identifier'
     && node.name === 'unmountComponent') {

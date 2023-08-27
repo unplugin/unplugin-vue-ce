@@ -26,6 +26,7 @@ export function injectPatchProp(
 ) {
   if ((node as Identifier).type === 'Identifier'
     && (node as Identifier).name === 'patchProp'
+      && parent
     && parent.type === 'VariableDeclarator')
     isPatchPropIdentifier = true
 

@@ -86,6 +86,7 @@ export function injectApiCustomElement(
 ) {
   if (node.type === 'Identifier'
     && node.name === 'VueElement'
+      && parent
     && parent.type === 'ClassDeclaration')
     isVueElementIdentifier = true
 
@@ -109,6 +110,7 @@ export function injectApiCustomElement(
 
   if (node.type === 'Identifier'
     && node.name === '_applyStyles'
+      && parent
     && parent.type === 'ClassMethod'
     && isVueElementIdentifier
     && isBaseClassIdentifier) {

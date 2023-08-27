@@ -15,6 +15,7 @@ export function injectToComponent(
   parent: FunctionDeclaration,
 ) {
   if (node.type === 'Identifier'
+      && parent
       && parent.type === 'FunctionDeclaration'
       && node.name === 'createComponentInstance')
     isCreateComponentInstance = true

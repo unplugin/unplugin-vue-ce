@@ -1,7 +1,7 @@
 # unplugin-vue-ce
 一个 `vue` 的插件能够让你扩展 `vue` 的 `custom element` 功能（提供 `v-model`、子组件 `style`）
 
-[English](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/README.md) | 中文
+[English](https://github.com/unplugin/unplugin-vue-ce/blob/master/README.md) | 中文
 
 ## Feature
 
@@ -114,19 +114,19 @@ build({
 
 ## 🎯 Support v-model
 
-查看更多详情 [@unplugin-vue-ce/v-model](https://github.com/baiwusanyu-c/unplugin-vue-ce/tree/master/packages/v-model/README.md)
+查看更多详情 [@unplugin-vue-ce/v-model](https://github.com/unplugin/unplugin-vue-ce/tree/master/packages/v-model/README.md)
 
 ## 🎃 Support the style of child components
 
-查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
+查看更多详情 [@unplugin-vue-ce/sub-style](https://github.com/unplugin/unplugin-vue-ce/blob/master/packages/sub-style/README.md)
 
 ## 🍻 Support using web component as root component
 
-查看更多详情 [@unplugin-vue-ce/ce-app](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
+查看更多详情 [@unplugin-vue-ce/ce-app](https://github.com/unplugin/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
 
 ## 🚧 Support switch shadow (TODO)
 
-查看更多详情 [@unplugin-vue-ce/switch-shadow](https://github.com/baiwusanyu-c/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
+查看更多详情 [@unplugin-vue-ce/switch-shadow](https://github.com/unplugin/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
 
 ## Thanks
 * [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

@@ -18,7 +18,7 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "baiwusanyu-utils": "^1.0.15",
-    "typescript": "~4.5.5",
+    "typescript": "~5.2.0",
     "unplugin": "^1.4.0"
   },
   "browserslist": [

@@ -8,17 +8,17 @@
     "preview": "cd dist && npx http-server -p 8081"
   },
   "dependencies": {
-    "@unocss/postcss": "^0.55.2",
-    "postcss": "^8.4.28",
-    "unocss": "^0.55.2",
-    "vue": "^3.2.13"
+    "@unocss/postcss": "^0.55.3",
+    "postcss": "^8.4.29",
+    "unocss": "^0.55.3",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@unocss/webpack": "latest",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
     "baiwusanyu-utils": "^1.0.15",
-    "typescript": "~5.2.0",
+    "typescript": "~5.2.2",
     "unplugin": "^1.4.0"
   },
   "browserslist": [

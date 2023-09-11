@@ -20,7 +20,7 @@ npm i unplugin-vue-ce -D
 ```
 或
 ```bash
-yarn add unplugin-vue-ce-D
+yarn add unplugin-vue-ce -D
 ```
 或
 ```bash

@@ -3,12 +3,13 @@ import BComp from './B.vue'
 </script>
 
 <template>
-  <p class="a">A</p>
-  <BComp></BComp>
-
+  <p class="a">
+    A
+  </p>
+  <BComp />
 </template>
 
-<style scoped>
+<style>
 .a{
   color: red
 }

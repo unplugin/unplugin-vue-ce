@@ -9,17 +9,17 @@
   },
   "dependencies": {
     "@unocss/postcss": "^0.57.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "unocss": "^0.57.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.6"
   },
   "devDependencies": {
     "@unocss/webpack": "latest",
     "@vue/cli-plugin-typescript": "~5.0.8",
     "@vue/cli-service": "~5.0.8",
-    "baiwusanyu-utils": "^1.0.15",
+    "baiwusanyu-utils": "^1.0.16",
     "typescript": "~5.2.2",
-    "unplugin": "^1.4.0"
+    "unplugin": "^1.5.0"
   },
   "browserslist": [
     "> 1%",

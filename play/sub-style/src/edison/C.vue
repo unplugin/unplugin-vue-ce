@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <p class="c">C</p>
+  <p class="c">
+    C
+  </p>
 </template>
 
 <style scoped>

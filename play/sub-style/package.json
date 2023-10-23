@@ -7,5 +7,17 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.22.14",
+    "@babel/types": "^7.22.11",
+    "@unplugin-vue-ce/utils": "workspace:*",
+    "baiwusanyu-utils": "^1.0.15",
+    "estree-walker-ts": "^1.0.1",
+    "fast-glob": "^3.3.1",
+    "fs-extra": "^11.1.1",
+    "magic-string": "^0.30.3",
+    "unplugin": "^1.4.0",
+    "vue": "^3.3.4"
   }
 }

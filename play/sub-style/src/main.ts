@@ -44,6 +44,12 @@ app.config.compilerOptions.isCustomElement = (tag) => {
   return tag === 'vue-app';
 }; */
 
+/*
 import App from './nested-same-component/same.vue'
+const ceApp = defineCustomElement(App)
+customElements.define('vue-app', ceApp)
+*/
+
+import App from './edison/A.ce.vue'
 const ceApp = defineCustomElement(App)
 customElements.define('vue-app', ceApp)

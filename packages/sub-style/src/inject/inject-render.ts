@@ -9,8 +9,7 @@ import type {
 const injectToUnMountContent = ''
   + 'if (vnode.component.isCEChild && vnode.component.removeCEChildStyle) {\n'
   + '        vnode.component.removeCEChildStyle(\n'
-  + '          vnode.component.type.styles,\n'
-  + '          vnode.component.uid\n'
+  + '          vnode.component.type.styles\n'
   + '        )\n'
   + '      }'
 

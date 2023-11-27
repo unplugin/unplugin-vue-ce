@@ -3,12 +3,7 @@ import type { MagicStringBase } from 'magic-string-ast'
 
 let isCreateComponentInstance = false
 let VariableDeclarationInst = false
-const injectToCompContent = '\n    isCEChild: parent && (parent.isCE || parent.isCEChild),\n'
-    + '    addCEChildStyle:\n'
-    + '      parent && parent.addCEChildStyle ? parent.addCEChildStyle : null,\n'
-    + '    removeCEChildStyle:\n'
-    + '      parent && parent.removeCEChildStyle ? parent.removeCEChildStyle : null,\n'
-    + '    cecStyleIds: null,'
+const injectToCompContent = '\n    ceContext: parent && (parent.isCE || parent.ceContext) ? parent.ceContext : null,\n'
 export function injectToComponent(
   mgcStr: MagicStringBase,
   node: Identifier | ObjectExpression,

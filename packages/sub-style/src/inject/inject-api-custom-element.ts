@@ -1,46 +1,37 @@
 import type { MagicStringBase } from 'magic-string-ast'
 import type {
+  BlockStatement,
   CallExpression,
   ClassDeclaration,
   ClassMethod,
   Identifier,
+  IfStatement,
   MemberExpression,
   VariableDeclarator,
 } from '@babel/types'
 
-const _childStylesAnchor = '\n    this._childStylesAnchor = null;'
+const _childStylesAnchor = '\n    this._childStylesAnchor = null;\n    this._childStylesSet = new Set();'
 
 const injectBindFnContent
-  = 'instance.addCEChildStyle = this._addChildStyles.bind(this);\n'
-  + '        instance.removeCEChildStyle = this._removeChildStyles.bind(this);\n        '
+  = ' instance.ceContext = {\n'
+  + '          addCEChildStyle: this._addChildStyles.bind(this),\n'
+  + '          removeCEChildStyles: this._removeChildStyles.bind(this),\n'
+  + '        };\n'
 
-const injectAddAndRemoveStyle = '_addChildStyles(styles, instance) {\n'
+const injectAddAndRemoveStyle = '// The method used by custom element child components\n'
+  + '  // to add styles to the shadow dom\n'
+  + '  _addChildStyles(styles, uid, hasAttr) {\n'
   + '    if (styles) {\n'
-  + '      const styleContent = styles.join();\n'
-  // eslint-disable-next-line no-template-curly-in-string
-  + '      const ceKey = `__${this._instance.uid}`;\n'
-  + '      let ceKeySet = /* @__PURE__ */ new Set();\n'
-  + '      if (ceChildStyleMap.has(styleContent)) {\n'
-  + '        ceKeySet = ceChildStyleMap.get(styleContent);\n'
-  + '        if (ceKeySet.has(ceKey)) {\n'
-  + '          ceKeySet.add(ceKey);\n'
-  + '          ceChildStyleMap.set(styleContent, ceKeySet);\n'
-  + '          return;\n'
-  + '        }\n'
-  + '      }\n'
-  + '      ceKeySet.add(ceKey);\n'
-  + '      ceChildStyleMap.set(styleContent, ceKeySet);\n'
-  // eslint-disable-next-line no-template-curly-in-string
-  + '      const ceStyleId = `data-v-ce-${instance.uid}`;\n'
+  + '      const isRepeated = this.isHasChildStyle(styles);\n'
+  + '      if (isRepeated && !hasAttr)\n'
+  + '        return;\n'
   + '      styles.forEach((css, index) => {\n'
   + '        const s = document.createElement("style");\n'
   + '        s.textContent = css;\n'
-  + '        s.setAttribute(ceStyleId, "");\n'
+  // eslint-disable-next-line no-template-curly-in-string
+  + '        s.setAttribute(`data-v-ce-${uid}`, "");\n'
   + '        if (this._childStylesAnchor) {\n'
-  + '          this.shadowRoot.insertBefore(\n'
-  + '            s,\n'
-  + '            this._childStylesAnchor\n'
-  + '          );\n'
+  + '          this.shadowRoot.insertBefore(s, this._childStylesAnchor);\n'
   + '        } else {\n'
   + '          this.shadowRoot.appendChild(s);\n'
   + '        }\n'
@@ -51,38 +42,43 @@ const injectAddAndRemoveStyle = '_addChildStyles(styles, instance) {\n'
   + '      });\n'
   + '    }\n'
   + '  }\n'
-  + '  _removeChildStyles(styles, uid) {\n'
+  + '  _removeChildStyles(uid) {\n'
+  + '    {\n'
+  // eslint-disable-next-line no-template-curly-in-string
+  + '      const styleList = this.shadowRoot.querySelectorAll(`[data-v-ce-${uid}]`);\n'
+  + '      let oldStyleContentList = [];\n'
+  + '      styleList.length > 0 && styleList.forEach((s) => {\n'
+  + '        oldStyleContentList.unshift(s.innerHTML);\n'
+  + '        this.shadowRoot.removeChild(s);\n'
+  + '        const anchor = this.shadowRoot.querySelectorAll("style");\n'
+  + '        this._childStylesAnchor = anchor.length > 0 ? anchor[anchor.length - 1] : void 0;\n'
+  + '      });\n'
+  + '      this._childStylesSet.delete(oldStyleContentList.join());\n'
+  + '    }\n'
+  + '  }\n'
+  + '  isHasChildStyle(styles) {\n'
   + '    if (styles) {\n'
   + '      const styleContent = styles.join();\n'
-  + '      let cecStyle = /* @__PURE__ */ new Set();\n'
-  + '      if (ceChildStyleMap.has(styleContent)) {\n'
-  // eslint-disable-next-line no-template-curly-in-string
-  + '        const ceKey = `__${this._instance.uid}`;\n'
-  + '        cecStyle = ceChildStyleMap.get(styleContent);\n'
-  + '        cecStyle.delete(ceKey);\n'
-  + '        if (cecStyle.size === 0) {\n'
-  // eslint-disable-next-line no-template-curly-in-string
-  + '          const sList = this.shadowRoot.querySelectorAll(`[data-v-ce-${uid}]`);\n'
-  + '          sList.length > 0 && sList.forEach((s) => this.shadowRoot.removeChild(s));\n'
-  + '          const archor = this.shadowRoot.querySelectorAll("style");\n'
-  + '          this._childStylesAnchor = archor.length > 0 ? archor[archor.length - 1] : void 0;\n'
-  + '          ceChildStyleMap.delete(styleContent);\n'
-  + '        } else {\n'
-  + '          ceChildStyleMap.set(styleContent, cecStyle);\n'
-  + '        }\n'
+  + '      if (this._childStylesSet.has(styleContent)) {\n'
+  + '        return true;\n'
   + '      }\n'
+  + '      this._childStylesSet.add(styleContent);\n'
+  + '      return false;\n'
   + '    }\n'
   + '  }'
 
 const injectApplyStyles = '\n    this._childStylesAnchor = s;'
-const injectCEChildStyleMap = 'const ceChildStyleMap = /* @__PURE__ */ new Map();\n'
+const injectApplyStylesCERoot = '\n    s.setAttribute(`data-v-ce-root`, \'\')\n'
 let isVueElementIdentifier = false
 let isBaseClassIdentifier = false
 let isApplyStylesIdentifier = false
+let isCeReloadIdentifier = false
+let isCreateVnodeIdentifier = false
+const injectCreateVNode = '\nthis._childStylesSet.clear();\n'
 export function injectApiCustomElement(
   mgcStr: MagicStringBase,
-  node: Identifier | CallExpression | MemberExpression,
-  parent: VariableDeclarator | CallExpression | ClassDeclaration | ClassMethod,
+  node: Identifier | CallExpression | MemberExpression | IfStatement | BlockStatement,
+  parent: VariableDeclarator | CallExpression | ClassDeclaration | ClassMethod | IfStatement | MemberExpression,
 ) {
   if (node.type === 'Identifier'
     && node.name === 'VueElement'
@@ -128,7 +124,36 @@ export function injectApiCustomElement(
     isApplyStylesIdentifier = false
     isVueElementIdentifier = false
     isBaseClassIdentifier = false
+    mgcStr.prependLeft(node.start! - 1, injectApplyStylesCERoot)
     mgcStr.prependRight(node.end! + 1, injectApplyStyles)
-    mgcStr.prependLeft(0, injectCEChildStyleMap)
+  }
+
+  if (node.type === 'Identifier'
+    && node.name === '_createVNode'
+    && parent
+    && parent.type === 'ClassMethod'
+    && isVueElementIdentifier
+    && isBaseClassIdentifier)
+    isCreateVnodeIdentifier = true
+
+  if (node.type === 'Identifier'
+    && node.name === 'ceReload'
+    && parent
+    && parent.type === 'MemberExpression'
+    && isCreateVnodeIdentifier
+    && isVueElementIdentifier
+    && isBaseClassIdentifier)
+    isCeReloadIdentifier = true
+
+  if (isCeReloadIdentifier
+    && isVueElementIdentifier
+    && isCreateVnodeIdentifier
+    && isBaseClassIdentifier
+    && node.type === 'BlockStatement'
+    && parent
+    && parent.type === 'IfStatement') {
+    isCeReloadIdentifier = false
+    isCreateVnodeIdentifier = false
+    mgcStr.prependRight(node.end! + 1, injectCreateVNode)
   }
 }

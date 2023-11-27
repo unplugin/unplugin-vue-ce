@@ -6,22 +6,22 @@ import type {
   VariableDeclarator,
 } from '@babel/types'
 
-const injectToUnMountContent = ''
-  + 'if (vnode.component.isCEChild && vnode.component.removeCEChildStyle) {\n'
-  + '        vnode.component.removeCEChildStyle(\n'
-  + '          vnode.component.type.styles,\n'
-  + '          vnode.component.uid\n'
-  + '        )\n'
-  + '      }'
+const injectToUnMountContent = 'if (vnode.component.ceContext && isHmrUpdating) {\n'
+  + '        vnode.component.ceContext.removeCEChildStyles(vnode.component.uid);\n'
+  + '      }\n'
 
 const injectToBaseCreateRendererContent = 'if (instance && instance.parent) {\n'
   + '            if (!(instance.parent.type.__asyncLoader && instance.parent.isCE)) {\n'
-  + '              const styles = instance.isCEChild && instance.type.styles || null;\n'
-  + '              if (instance.addCEChildStyle && styles) {\n'
-  + '                instance.addCEChildStyle(styles, instance);\n'
+  + '              const styles = instance.ceContext && instance.type.styles || null;\n'
+  + '              if (instance.ceContext && styles) {\n'
+  + '                instance.ceContext.addCEChildStyle(\n'
+  + '                  styles,\n'
+  + '                  instance.uid,\n'
+  + '                  instance.hasStyleAttrs\n'
+  + '                );\n'
   + '              }\n'
   + '            }\n'
-  + '          }'
+  + '          }\n'
 
 let isComponentUpdateFnIdentifier = false
 let isUnmountIdentifier = false

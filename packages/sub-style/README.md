@@ -105,6 +105,53 @@ build({
 ```
 </details>
 
+## ES module import css( experimental )
+via: https://github.com/unplugin/unplugin-vue-ce/issues/118  
+`@unplugin-vue-ce/sub-style` Starting from version "1.0.0-beta.19", a new option `isESCSS` is added, which is turned off by default.  
+This is an experimental feature.
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite'
+import { viteVueCESubStyle } from '@unplugin-vue-ce/sub-style'
+import vue from '@vitejs/plugin-vue'
+import type { PluginOption } from 'vite'
+export default defineConfig({
+  plugins: [
+    vue(),
+    viteVueCESubStyle({
+      isESCSS: true
+    }) as PluginOption,
+  ],
+})
+```
+When `isESCSS` is turned on,`@unplugin-vue-ce/sub-style` will automatically move the css import part of the script block to the style block,   
+so that vue-plugin can compile its style. If you do not do this , it will be injected into the head of the document as a global style.  
+```vue
+<template>
+  <div>
+    foo
+  </div>
+</template>
+<script setup>
+import './test.css'
+</script>
+```
+transform result
+
+```vue
+<template>
+  <div>
+    foo
+  </div>
+</template>
+<script setup>
+
+</script>
+<style lang="css">
+  @import './test.css';
+</style>
+```
+
 ## About Tailwind CSS
 Since vue enables shadow dom by default, 
 it will isolate the style, 
@@ -126,7 +173,7 @@ or (only vite)
 ```
 
 ## About Uno CSS
-Only postcss plugins are supported (See: https://unocss.dev/integrations/postcss#install),  
+Only postcss plugins are supported (via: https://unocss.dev/integrations/postcss#install),  
 you need to add the root component of each web component to add the reference style:
 
 ```html

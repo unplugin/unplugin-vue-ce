@@ -8,9 +8,9 @@
     "preview": "cd dist && npx http-server -p 8081"
   },
   "dependencies": {
-    "@unocss/postcss": "^0.57.0",
+    "@unocss/postcss": "^0.58.0",
     "postcss": "^8.4.31",
-    "unocss": "^0.57.0",
+    "unocss": "^0.58.0",
     "vue": "^3.3.6"
   },
   "devDependencies": {

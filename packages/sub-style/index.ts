@@ -1,11 +1,26 @@
 import { createUnplugin } from 'unplugin'
-import { normalizePath, setGlobalPrefix } from 'baiwusanyu-utils'
+import { extend, normalizePath, setGlobalPrefix } from 'baiwusanyu-utils'
 import MagicString from 'magic-string'
 import { NAME } from '@unplugin-vue-ce/utils'
 import { injectVueRuntime } from './src/inject/inject-vue-runtime'
 import { atomicCSSPreset, virtualTailwind, virtualUno } from './src/atomic-css'
+import { parseESCSS } from './src/parse'
+import { transformESCSS } from './src/transform'
+import { injectStyleESCSS } from './src/inject/inject-style-escss'
+import type { SFCParseOptions } from '@vue/compiler-sfc'
+export interface UNVueCESubStyleOption {
+  isESCSS?: boolean
+  sfcParseOptions?: SFCParseOptions
+}
 
-export const unVueCESubStyle = (): any => {
+export const unVueCESubStyle = (options: UNVueCESubStyleOption): any => {
+  const defaultOptions = {
+    isESCSS: false,
+    sfcParseOptions: {},
+  }
+
+  const resolvedOptions = extend(defaultOptions, options)
+
   setGlobalPrefix(`[${NAME}]:`)
   // just vite
   return [
@@ -34,6 +49,13 @@ export const unVueCESubStyle = (): any => {
 
           if (id.endsWith('.vue') && code.includes(virtualUno))
             mgcStr.prependRight(mgcStr.length(), atomicCSSPreset[virtualUno])
+
+          // esm import css transform to style tag
+          if (id.endsWith('.vue') && resolvedOptions.isESCSS) {
+            const parseRes = parseESCSS(mgcStr.toString(), resolvedOptions.sfcParseOptions)
+            transformESCSS(mgcStr, parseRes)
+            injectStyleESCSS(mgcStr, parseRes)
+          }
 
           return {
             code: mgcStr.toString(),

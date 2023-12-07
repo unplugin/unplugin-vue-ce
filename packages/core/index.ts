@@ -1,10 +1,11 @@
 import { unVueCEVModel } from '@unplugin-vue-ce/v-model'
-import { unVueCESubStyle } from '@unplugin-vue-ce/sub-style'
+import { type UNVueCESubStyleOption, unVueCESubStyle } from '@unplugin-vue-ce/sub-style'
 import { createUnplugin } from 'unplugin'
-const unplugin = createUnplugin(() => {
+
+const unplugin = createUnplugin<UNVueCESubStyleOption>((options: UNVueCESubStyleOption = {}) => {
   return [
     unVueCEVModel(),
-    ...unVueCESubStyle(),
+    ...unVueCESubStyle(options),
     // unVueCEShadow(),
   ]
 })

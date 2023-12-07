@@ -3,16 +3,16 @@
   defineCustomElement,
 } from '../patches/vue.esm-browser.js'; */
 
-import { defineCustomElement } from 'vue'
+import { createApp, defineCustomElement } from 'vue'
 
-/* import App from './App.vue';
-import Foo from './bwsy-ce-foo.ce.vue';
-const app = createApp(App);
-customElements.define('bwsy-ce-foo', defineCustomElement(Foo));
-/!*app.config.compilerOptions.isCustomElement = (tag=>{
-    return tag === 'bwsy-ce-foo'
-})*!/
-app.mount('#app'); */
+import App from './App.vue'
+import Foo from './bwsy-ce-foo.ce.vue'
+const app = createApp(App)
+customElements.define('bwsy-ce-foo', defineCustomElement(Foo))
+app.config.compilerOptions.isCustomElement = (tag) => {
+  return tag === 'bwsy-ce-foo'
+}
+app.mount('#app')
 
 /* import App from './nested/vue-app.ce.vue'
 const app = createApp(App);
@@ -50,6 +50,6 @@ const ceApp = defineCustomElement(App)
 customElements.define('vue-app', ceApp)
 */
 
-import App from './edison/A.ce.vue'
+/* import App from './edison/A.ce.vue'
 const ceApp = defineCustomElement(App)
-customElements.define('vue-app', ceApp)
+customElements.define('vue-app', ceApp) */

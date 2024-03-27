@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "version": "1.0.0-beta.19",
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@8.15.5",
   "keywords": [
     "typescript",
     "javascript",
@@ -60,12 +60,12 @@
     "vue": "^3.3.2"
   },
   "dependencies": {
-    "baiwusanyu-utils": "^1.0.16",
+    "baiwusanyu-utils": "^1.0.18",
     "estree-walker-ts": "^1.0.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
-    "magic-string": "^0.30.5",
-    "unplugin": "^1.5.1",
-    "vue": "^3.3.10"
+    "magic-string": "^0.30.8",
+    "unplugin": "^1.10.0",
+    "vue": "^3.4.21"
   }
 }

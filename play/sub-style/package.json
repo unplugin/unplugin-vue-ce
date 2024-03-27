@@ -9,16 +9,16 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@babel/parser": "^7.23.5",
-    "@babel/types": "^7.23.5",
+    "@babel/parser": "^7.24.1",
+    "@babel/types": "^7.24.0",
     "@unplugin-vue-ce/utils": "workspace:*",
-    "baiwusanyu-utils": "^1.0.16",
+    "baiwusanyu-utils": "^1.0.18",
     "estree-walker-ts": "^1.0.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
-    "magic-string": "^0.30.5",
-    "unplugin": "^1.5.1",
+    "magic-string": "^0.30.8",
+    "unplugin": "^1.10.0",
     "vite-plugin-inspect": "latest",
-    "vue": "^3.3.10"
+    "vue": "^3.4.21"
   }
 }

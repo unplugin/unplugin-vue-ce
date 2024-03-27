@@ -89,7 +89,8 @@ export const unVueCESubStyle = (options: UNVueCESubStyleOption): any => {
 
         // vite dev only
         if (formatId.includes('.vite/deps/vue.js')
-        || (formatId.includes('.vite/deps/chunk') && code.includes('__isVue')))
+          || (formatId.includes('sb-vite/deps/chunk') && code.includes('__isVue'))
+          || (formatId.includes('.vite/deps/chunk') && code.includes('__isVue')))
           injectVueRuntime(mgcStr)
 
         return {

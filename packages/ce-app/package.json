@@ -3,7 +3,7 @@
   "description": " ",
   "private": false,
   "type": "module",
-  "version": "1.0.0-beta.20",
+  "version": "1.0.0-beta.21",
   "packageManager": "pnpm@8.15.5",
   "keywords": [
     "typescript",

@@ -119,7 +119,7 @@ export default defineConfig({
   plugins: [
     vue(),
     viteVueCESubStyle({
-      isESCSS: true
+      isESCSS: true,
     }) as PluginOption,
   ],
 })
@@ -132,6 +132,7 @@ so that vue-plugin can compile its style. If you do not do this , it will be inj
     foo
   </div>
 </template>
+
 <script setup>
 import './test.css'
 </script>
@@ -144,9 +145,11 @@ transform result
     foo
   </div>
 </template>
+
 <script setup>
 
 </script>
+
 <style lang="css">
   @import './test.css';
 </style>

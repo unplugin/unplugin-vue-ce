@@ -1,3 +1,7 @@
+
+> With the release of Vue 3.5, Vue has more support for custom elements. This repository should have completed its mission (a transitional solution before Vue supports more features for custom elements), 
+> so this repository should not support 3.5. I recommend you upgrade to Vue 3.5.x to meet your needs for custom elements.
+
 # unplugin-vue-ce
 A vue plugin that extends vue's Custom Element capabilities (v-model, child style)
 
@@ -121,10 +125,6 @@ view more details [@unplugin-vue-ce/sub-style](https://github.com/unplugin/unplu
 ## 🍻 Support using web component as root component
 
 view more details [@unplugin-vue-ce/ce-app](https://github.com/unplugin/unplugin-vue-ce/blob/master/packages/ce-app/README.md)
-
-## 🚧 Support switch shadow (TODO)
-
-view more details [@unplugin-vue-ce/switch-shadow](https://github.com/unplugin/unplugin-vue-ce/blob/master/packages/switch-shadow/README.md) 
 
 ## Thanks
  * [vue-web-component-wrapper](https://github.com/EranGrin/vue-web-component-wrapper)

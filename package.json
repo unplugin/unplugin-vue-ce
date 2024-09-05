@@ -105,7 +105,7 @@
     "eslint": "^8.57.0",
     "esno": "^4.7.0",
     "git-ensure": "^0.1.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "magic-string-ast": "^0.3.0",
